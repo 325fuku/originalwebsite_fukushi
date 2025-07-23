@@ -22,7 +22,7 @@ body {
 
 /* 背景付きHeaderとHero */
 .site-header {
-    background: url("./温泉.jpg");
+    background: url("../img/温泉.jpg");
     background-repeat: repeat-x;
     background-size: auto;
     background-position: 0% center;
@@ -30,7 +30,7 @@ body {
     animation: moveBackground 30s linear infinite;
 }
 .hero {
-    background: url("./温泉画像2.jpg");
+    background: url("../img/温泉画像2.jpg");
     background-repeat: repeat-x;
     background-size: cover;
     background-position: 0% center;
