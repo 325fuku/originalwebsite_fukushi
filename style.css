@@ -1,116 +1,208 @@
-body{
-    font-family: sans-serif;
+* {
     margin: 0;
-    background: #fdfaf6;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    color: #fff;
 }
 
-.main-header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 250px;
-    background-image: url(./温泉.jpg);
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 30px;
+    color: rgb(149, 247, 242);
+}
+
+.onsen-section .container {
+    color: rgb(104, 141, 175);
+}
+
+/* 背景付きHeaderとHero */
+.site-header {
+    background: url("./温泉.jpg");
+    background-repeat: repeat-x;
+    background-size: auto;
+    background-position: 0% center;
+    height: 500px;
+    animation: moveBackground 30s linear infinite;
+}
+.hero {
+    background: url("./温泉画像2.jpg");
+    background-repeat: repeat-x;
     background-size: cover;
-    background-position: center;
-    color: white;
+    background-position: 0% center;
+    background-attachment: fixed;
+    height: 500px;
     display: flex;
-    align-items: space-between;
-    padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    text-align: center;
+    animation: moveBackground 30s linear infinite;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
 }
 
-.menu-icon{
+.overlay .container p {
+    margin-bottom: 50px;
+}
+
+/* ナビゲーション */
+.nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ボタン */
+.btn-primary {
+    padding: 10px 20px;
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 温泉カード */
+.onsen-section {
+    position: relative;
+    background: #f5f5f5;
+    color: #333;
+    padding: 50px 20px;
+}
+
+.onsen-section::before,
+.onsen-section::after {
+    content: "♨";
+    font-size: 48px;
+    color: #d14;
+    position: absolute;
+    top: 100px;
+}
+.onsen-section::before {
+    left: 10px;
+}
+.onsen-section::after {
+    right: 10px;
+}
+
+.onsen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+.card h4,
+.card p {
+    padding: 10px;
+}
+
+/* 動画スライダー */
+.video-section {
+    background: #222;
+    padding: 50px 20px;
+}
+.video-slider {
+    display: flex;
+    align-items: center;
+}
+.video-slider .videos {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+}
+.video-slider iframe {
+    width: 300px;
+    height: 180px;
+    border: none;
+}
+.video-slider button {
+    background: none;
+    color: white;
     font-size: 24px;
+    border: none;
     cursor: pointer;
 }
 
-header{
-    background: hsl(171, 100%, 90%);
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    height: 300px;
-}
-
-h1{
-    margin: 0;
-    font-size: 3em;
-    color: rgb(193, 206, 250);
-}
-
-.menu-button{
-    font-size: 2.5em;
-    background: none;
-    border: none;
-    color: rgb(74, 35, 215);
-}
-
-.onsen-grid{
-    margin-top: 240px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-    padding: 30px;
-    justify-items: center;
-}
-
-.onsen-card{
-    width: 150px;
-    height: 100px;
-    background-color: lightblue;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    line-height: 1.4;
-}
-
-.onsen-videos{
-    background: #fff;
-    padding: 2em;
+/* フッター */
+.site-footer {
+    background: #111;
+    color: #ccc;
+    padding: 30px 20px;
     text-align: center;
 }
-
-.video-gallery{
-    display: flex;
-    overflow-x: scroll;
-    gap: 1em;
-    padding-top: 1em;
+.site-footer ul {
+    list-style: none;
+    margin-top: 10px;
+}
+.site-footer a {
+    color: #ccc;
+    text-decoration: none;
 }
 
-footer{
-    background: #ddd;
-    padding: 1em;
+@keyframes moveBackground {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 100% center;
+    }
+}
+
+.footer-onsen-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.onsen-block {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
+    min-width: 150px;
 }
 
-.sns-icons{
+.onsen-block h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sns-icons {
     display: flex;
     justify-content: center;
-    gap: 1.5em;
-    margin-bottom: 0.5em;
+    gap: 15px;
 }
 
-.sns-icons img{
-    width: 32px;
-    height: 32px;
+.sns-icons a {
+    color: #ccc;
+    font-size: px;
+    transition: color 0.3s;
 }
 
-.footer-logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5em;
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-.footer-logo img{
-    width: 40px;
-    height: 40px;
+.sns-icons a:hover {
+    color: #fff;
 }

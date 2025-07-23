@@ -1,40 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>湯～たび九州</title>
-        <link rel="stylesheet" href="./style.css" />
+        <title>湯〜ナビ九州</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
     </head>
     <body>
-        <h1>コードを綺麗に整える</h1>
-
-        <header>
-            <h1>湯～たび九州</h1>
-            <button class="menu-button" onclick="toggleMenu()">≡ MENU</button>
+        <!-- Header -->
+        <header class="site-header">
+            <div class="overlay">
+                <div class="container">
+                    <h1 class="logo">湯〜ナビ九州</h1>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="#onsen">温泉紹介</a></li>
+                            <li><a href="#videos">動画</a></li>
+                            <li><a href="#sns">SNS</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </header>
 
-        <nav>
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#onsen">温泉紹介</a></li>
-                <li><a href="#videos">動画</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
-        </nav>
-
-        <main id="onsen">
-            <section class="onsen-cards">
-                <div class="card">佐賀<br />嬉野温泉</div>
-                <div class="card">福岡<br />原鶴温泉</div>
-                <div class="card">長崎<br />島原温泉</div>
-                <div class="card">熊本<br />黒川温泉</div>
-                <div class="card">大分<br />別府温泉</div>
-                <div class="card">鹿児島<br />指宿温泉</div>
-                <div class="card">宮崎<br />青島温泉</div>
-            </section>
+        <!-- Hero Section -->
+        <main class="hero">
+            <div class="overlay">
+                <div class="container">
+                    <h2>九州の名湯をご案内</h2>
+                    <p>癒しの旅へ出かけよう</p>
+                    <a href="#onsen" class="btn-primary">温泉を探す</a>
+                </div>
+            </div>
         </main>
 
-        <section></section>
+        <!-- Section 1: 温泉カード -->
+        <section id="onsen" class="onsen-section">
+            <div class="container">
+                <h3>九州の代表温泉地</h3>
+                <div class="onsen-grid">
+                    <a href="harazuru.html" class="card">
+                        <img src="./原鶴温泉.jpg" alt="福岡 原鶴温泉" />
+                        <h4>福岡</h4>
+                        <p>原鶴温泉</p>
+                    </a>
+                    <a href="ulesino.html" class="card">
+                        <img src="./嬉野温泉.jpg" alt="佐賀 嬉野温泉" />
+                        <h4>佐賀</h4>
+                        <p>嬉野温泉</p>
+                    </a>
+                    <a href="simabara.html" class="card">
+                        <img src="./島原温泉.jpg" alt="長崎 島原温泉" />
+                        <h4>長崎</h4>
+                        <p>島原温泉</p>
+                    </a>
+                    <a href="kurokawa.html" class="card">
+                        <img src="./黒川温泉.webp" alt="熊本 黒川温泉" />
+                        <h4>熊本</h4>
+                        <p>黒川温泉</p>
+                    </a>
+                    <a href="beppu.html" class="card">
+                        <img src="./別府温泉.webp" alt="大分 別府温泉" />
+                        <h4>大分</h4>
+                        <p>別府温泉</p>
+                    </a>
+                    <a href="ibusuki.html" class="card">
+                        <img src="./指宿温泉2.webp" alt="鹿児島 指宿温泉" />
+                        <h4>鹿児島</h4>
+                        <p>指宿温泉</p>
+                    </a>
+                    <a href="kyoumati.html" class="card">
+                        <img src="./京町温泉.png" alt="宮崎 京町温泉" />
+                        <h4>宮崎</h4>
+                        <p>京町温泉</p>
+                    </a>
+                    <!-- 他の県も追加 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 動画スライダー -->
+        <section id="videos" class="video-section">
+            <div class="container">
+                <h3>温泉動画で巡る</h3>
+                <div class="video-slider">
+                    <button class="prev">‹</button>
+                    <div class="videos">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/SOaG8OQ07RE?si=HYTSu0rVuehv6YCu"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/g_Ms9I0REbo?si=WoGWp8llyZkdXJr5"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/0as9Bq9V6Dw?si=zhoSs_1Vlwaw5jTT"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/JtmFAiKD_tE?si=w-LvY218dfGrENCY"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/gvF78uc-ApY?si=W6Lk5WEvB8UFIoUD"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/yB4PJngtcXc?si=fY_R98dLD_oOAL0Z"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/pISfmnv9VIg?si=FMdB17hWEu3JEOza"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <!-- 必要に応じて追加 -->
+                    </div>
+                    <button class="next">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-onsen-container">
+                <div class="onsen-block">
+                    <h4>原鶴温泉</h4>
+                    <div class="sns-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/fukuoka_taisenkaku/" target="_blank" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/harazuru/" target="_blank" aria_la><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="onsen-block">
+                    <h4>嬉野温泉</h4>
+                    <div class="sns-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="onsen-block">
+                    <h4>島原温泉</h4>
+                    <div class="sns-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="onsen-block">
+                    <h4>黒川温泉</h4>
+                    <div class="sns-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="onsen-block">
+                    <h4>別府温泉</h4>
+                    <div class="sns-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="onsen-block">
+                    <h4>指宿温泉</h4>
+                    <div class="sns-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="onsen-block">
+                    <h4>京町温泉</h4>
+                    <div class="sns-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
     </body>
 </html>
