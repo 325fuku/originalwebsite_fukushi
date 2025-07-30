@@ -16,8 +16,91 @@ body {
     color: rgb(149, 247, 242);
 }
 
+.nav-wrapper {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 0 0 50px;
+    border-radius: 50px;
+    margin: 0 500px;
+    margin-left: 50px;
+    margin-right: 990px;
+}
+.nav-wrapper .logo,
+.nav-wrapper .nav a {
+    color: #589fc0;
+}
+
+nav ul li a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px 15px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: translateY(-5px); /* 浮き出るように上に */
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.8); /* キラっとした感じ */
+}
+
 .onsen-section .container {
     color: rgb(104, 141, 175);
+}
+
+.onsen-section h3,
+.onsen-section h4,
+.onsen-section p,
+.onsen-section li {
+    color: #003366; /* 濃い青色 */
+    font-size: 30px;
+}
+
+/* 最初は非表示＆下にズレた状態 */
+.logo,
+.menu-box {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 表示トリガーが来たらアニメーション */
+.logo.animate,
+.menu-box.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo {
+    animation: floatIn 1.2s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.menu-box {
+    animation: floatIn 1.2s ease forwards;
+    opacity: 0;
+}
+
+/* メニューを順番にアニメーション表示（温泉紹介・動画・SNS） */
+.menu-box:nth-of-type(1) {
+    animation-delay: 0.4s;
+}
+.menu-box:nth-of-type(2) {
+    animation-delay: 0.6s;
+}
+.menu-box:nth-of-type(3) {
+    animation-delay: 0.8s;
+}
+
+.onsen-section h3 {
+    font-size: 50px;
+    background: linear-gradient(90deg, gold, deeppink, cyan);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    color: rgb(69, 163, 204);
+    font-style: italic;
 }
 
 /* 背景付きHeaderとHero */
@@ -30,7 +113,7 @@ body {
     animation: moveBackground 30s linear infinite;
 }
 .hero {
-    background: url("../img/温泉画像2.jpg");
+    background: url("../img/温泉画像5.jpg");
     background-repeat: repeat-x;
     background-size: cover;
     background-position: 0% center;
@@ -42,7 +125,7 @@ body {
     animation: moveBackground 30s linear infinite;
 }
 .overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     height: 100%;
     width: 100%;
 }
@@ -72,18 +155,48 @@ body {
     font-weight: bold;
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* 表示されたときに変化するスタイル */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.button-hover-effect {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* 温泉カード */
 .onsen-section {
     position: relative;
     background: #f5f5f5;
     color: #333;
     padding: 50px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* デフォルトで影を軽く入れると自然 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px); /* 上に10px動く */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* 影を強調して浮いてる感を出す */
 }
 
 .onsen-section::before,
 .onsen-section::after {
     content: "♨";
-    font-size: 48px;
+    font-size: 70px;
     color: #d14;
     position: absolute;
     top: 100px;
@@ -99,6 +212,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    text-decoration: ;
 }
 .card {
     background: #fff;
@@ -205,4 +319,35 @@ body {
 
 .sns-icons a:hover {
     color: #fff;
+}
+
+.menu-box {
+    border: 2px solid white; /* 枠線の色・太さ */
+    padding: 6px 12px; /* 文字と枠の余白 */
+    border-radius: 6px; /* 角を少し丸くする */
+    display: inline-block; /* 枠で囲うために必要 */
+    background-color: rgba(255, 255, 255, 0.4); /* 半透明の背景で読みやすく */
+    color: black; /* 文字色（背景と反対の色で調整） */
+    text-decoration: none; /* 下線を消す */
+    transition: background-color 0.3s; /* ホバー時のなめらかな変化 */
+}
+
+.menu-box:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* ホバー時は少し濃く */
+}
+
+.onsen-grid a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -1,59 +1,88 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>原鶴温泉 | 湯〜ナビ九州</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-
-    <!-- 戻るボタン -->
-    <header class="site-header">
-        <div class="overlay">
-            <div class="container">
-                <a href="index.html" class="btn-primary">← 戻る</a>
-                <h1 class="logo">原鶴温泉</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>原鶴温泉 | 湯〜ナビ九州</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <!-- 戻るボタン -->
+        <header class="site-header">
+            <div class="overlay">
+                <div class="container">
+                    <a href="index.html" class="btn-primary button-hover-effect">← 戻る</a>
+                    <h1 class="logo">原鶴温泉</h1>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="hero">
-        <div class="overlay">
-            <div class="container">
-                <h2>癒しの原鶴温泉</h2>
-                <p>筑後川沿いの静かな名湯</p>
+        <main class="hero">
+            <div class="overlay">
+                <div class="container">
+                    <h2 class="fade-in">癒しの原鶴温泉</h2>
+                    <p class="fade-in">筑後川沿いの静かな名湯</p>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- 説明文 -->
-    <section class="onsen-section">
-        <div class="container">
-            <h3>原鶴温泉の魅力</h3>
-            <p>福岡県朝倉市にある原鶴温泉は、「美肌の湯」として知られ、硫黄とアルカリの成分が肌に優しいと人気です。</p>
-        </div>
-    </section>
+        <!-- 説明文 -->
+        <section class="onsen-section">
+            <div class="container">
+                <h3 class="fade-in">~ 原鶴温泉の魅力 ~</h3>
+                <p>
+                    原鶴温泉は、福岡県と大分県の県境にある、筑後川のほとりの静かな温泉郷です。原鶴自慢の温泉は、弱アルカリ性で硫黄が混ざっており、古い角質を落とす性質と美肌効果を合わせ持った「W美肌の湯」として広く親しまれています。宿泊だけでなく、立ち寄り湯もあり、多彩な温泉を楽しむことができます。
+                </p>
+            </div>
+        </section>
 
-    <!-- イベント情報 -->
-    <section class="onsen-section">
-        <div class="container">
-            <h3>温泉イベント情報</h3>
-            <ul>
-                <li>7月：鵜飼い祭り</li>
-                <li>9月：温泉街ナイトマーケット</li>
-            </ul>
-        </div>
-    </section>
+        <!-- イベント情報 -->
+        <section class="onsen-section">
+            <div class="container">
+                <h3 class="fade-in">~ 温泉イベント情報 ~</h3>
+                <ul>
+                    <li>7月：鵜飼い祭り</li>
+                    <li>9月：温泉街ナイトマーケット</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- Googleマップ -->
-    <section class="onsen-section">
-        <div class="container">
-            <h3>アクセス</h3>
-            <iframe src="https://www.google.com/maps?q=原鶴温泉&output=embed" width="100%" height="300" style="border:0;" allowfullscreen=""></iframe>
-            <p>住所：福岡県朝倉市杷木志波<br>電話番号：0946-62-0001</p>
-        </div>
-    </section>
+        <!-- Googleマップ -->
+        <section class="onsen-section">
+            <div class="container">
+                <h3 class="fade-in">~ アクセス ~</h3>
+                <iframe
+                    src="https://www.google.com/maps?q=原鶴温泉&output=embed"
+                    width="100%"
+                    height="300"
+                    style="border: 0"
+                    allowfullscreen=""
+                ></iframe>
+                <p>住所：福岡県朝倉市杷木志波<br />電話番号：0946-62-0001</p>
+            </div>
+        </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const targets = document.querySelectorAll(".fade-in");
 
-</body>
+                const observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("show");
+                                observer.unobserve(entry.target); // 一度表示されたら監視解除
+                            }
+                        });
+                    },
+                    {
+                        threshold: 0.2, // 要素が20%見えたら発動
+                    }
+                );
+
+                targets.forEach((target) => {
+                    observer.observe(target);
+                });
+            });
+        </script>
+    </body>
 </html>
